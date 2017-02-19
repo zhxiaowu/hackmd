@@ -37,13 +37,13 @@ module.exports = [Object.assign({}, baseConfig, {
     module: {
         loaders: [{
             test: /\.css$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+            loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
         }, {
             test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'sass-loader')
+            loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'sass-loader' })
         }, {
             test: /\.less$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'less-loader')
+            loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'less-loader' })
         }]
     },
     output: {
